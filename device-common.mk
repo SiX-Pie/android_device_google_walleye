@@ -72,6 +72,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.insmod.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/init.insmod.cfg \
     $(LOCAL_PATH)/init.insmod_charger.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/init.insmod_charger.cfg
 
+
 # Input device files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/synaptics_dsxv26.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/synaptics_dsxv26.idc
@@ -103,4 +104,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # ModemService
 PRODUCT_COPY_FILES += \
-  device/google/muskie/modemservice.xml:system/etc/sysconfig/modemservice.xml
+  device/google/walleye/modemservice.xml:system/etc/sysconfig/modemservice.xml
+  
+# ModemService Whitelist
+PRODUCT_COPY_FILES += \
+  device/google/walleye/whitelist_modemservice.xml:system/etc/sysconfig/whitelist_modemservice.xml
+  
+# Privileged app permissions
+PRODUCT_COPY_FILES += \
+    device/google/walleye/privapp-permissions-walleye.xml:system/etc/permissions/privapp-permissions-walleye.xml
+    
+# Telephony
+PRODUCT_PACKAGES += \
+    telephony-ext
+ PRODUCT_BOOT_JARS += \
+    telephony-ext

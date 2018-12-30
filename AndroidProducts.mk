@@ -15,6 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_walleye.mk \
-    $(LOCAL_DIR)/aosp_walleye_test.mk \
-    $(LOCAL_DIR)/six_walleye.mk
+    $(LOCAL_DIR)/sixrom_walleye.mk

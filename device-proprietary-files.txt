@@ -1,6 +1,6 @@
 # Camera
 etc/permissions/com.google.android.camera.experimental2017.xml
--framework/com.google.android.camera.experimental2017.jar
+-framework/com.google.android.camera.experimental2017.jar|e26822c377e022c5848bc3c927e7a44a
 
 # CNE
 etc/cne/Nexus/ATT/ATT_profiles.xml
@@ -12,10 +12,6 @@ etc/firmware/dnd.descriptor
 etc/firmware/dnd.sound_model
 etc/firmware/music_detector.descriptor
 etc/firmware/music_detector.sound_model
-
-# IMS/HD Voice
--priv-app/CNEService/CNEService.apk
--app/ims/ims.apk
 
 # Permissions
 etc/permissions/com.android.sdm.plugins.connmo.xml
@@ -29,6 +25,8 @@ etc/permissions/features-verizon.xml
 etc/permissions/obdm_permissions.xml
 etc/permissions/privapp-permissions-wahoo.xml
 etc/permissions/vzw_mvs_permissions.xml
+etc/permissions/com.android.ims.rcsmanager.xml
+etc/permissions/com.android.vzwomatrigger.xml
 
 # Jars
 -framework/cneapiclient.jar;PRESIGNED
@@ -36,7 +34,8 @@ etc/permissions/vzw_mvs_permissions.xml
 -framework/com.quicinc.cne.jar;PRESIGNED
 -framework/embmslibrary.jar;PRESIGNED
 -framework/rcsimssettings.jar;PRESIGNED
--framework/vendor.qti.qcril.am-V1.0-java.jar
+# -framework/vendor.qti.qcril.am-V1.0-java.jar
+-framework/qcrilhook.jar
 -framework/VerizonUnifiedSettings.jar;PRESIGNED
 
 # Lib64
@@ -69,6 +68,9 @@ lib/librcc.so
 -app/embms/embms.apk
 -app/ims/ims.apk
 -app/Tycho/Tycho.apk;PRESIGNED
+-app/VZWAPNLib/VZWAPNLib.apk;PRESIGNED
+-app/vzw_msdc_api/vzw_msdc_api.apk;PRESIGNED
+-app/EaselServicePrebuilt/EaselServicePrebuilt.apk
 
 # Priv-app
 -priv-app/CarrierServices/CarrierServices.apk;PRESIGNED
@@ -78,6 +80,7 @@ lib/librcc.so
 -priv-app/DCMO/DCMO.apk
 -priv-app/DiagMon/DiagMon.apk
 -priv-app/DMService/DMService.apk
+-priv-app/GCS/GCS.apk;PRESIGNED
 -priv-app/HotwordEnrollmentOKGoogleWCD9340/HotwordEnrollmentOKGoogleWCD9340.apk;PRESIGNED
 -priv-app/HotwordEnrollmentTGoogleWCD9340/HotwordEnrollmentTGoogleWCD9340.apk;PRESIGNED
 -priv-app/HotwordEnrollmentXGoogleWCD9340/HotwordEnrollmentXGoogleWCD9340.apk;PRESIGNED
@@ -88,17 +91,15 @@ lib/librcc.so
 -priv-app/SprintDM/SprintDM.apk
 -priv-app/SprintHM/SprintHM.apk
 -priv-app/VzwOmaTrigger/VzwOmaTrigger.apk;PRESIGNED
+-priv-app/AmbientSensePrebuilt/AmbientSensePrebuilt.apk;PRESIGNED
 
-# VZW
--app/vzw_msdc_api/vzw_msdc_api.apk:app/vzw_msdc_api/vzw_msdc_api.apk;PRESIGNED
--app/VZWAPNLib/VZWAPNLib.apk:app/VZWAPNLib/VZWAPNLib.apk;PRESIGNED
-etc/permissions/com.android.vzwomatrigger.xml
-etc/permissions/com.verizon.apn.xml
-etc/permissions/com.verizon.embms.xml
-etc/permissions/com.verizon.llkagent.xml
-etc/permissions/com.verizon.provider.xml
-etc/permissions/com.verizon.services.xml
-etc/permissions/features-verizon.xml
-etc/permissions/obdm_permissions.xml
-etc/permissions/vzw_mvs_permissions.xml
--framework/VerizonUnifiedSettings.jar;PRESIGNED
+#vendor/app - move to below locations manually after extracting factory zip
+#dirty hack before I knew we could use : and specify destination #justanothernoob
+#cp -r vendor/app/wahoo_gfxdrv system/priv-app/wahoo_gfxdrv
+#cp -r vendor/app/QtiTelephonyService system/app/QtiTelephonyService
+-app/QtiTelephonyService/QtiTelephonyService.apk;PRESIGNED
+-priv-app/wahoo_gfxdrv/wahoo_gfxdrv.apk;
+
+#ambient
+etc/ambient/matcher_tah.leveldb
+

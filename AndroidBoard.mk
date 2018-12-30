@@ -14,4 +14,4 @@
 # limitations under the License.
 #
 
--include vendor/google/walleye/BoardConfigVendor.mk
+-include vendor/google_devices/muskie/proprietary/AndroidBoardVendor.mk

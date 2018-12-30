@@ -56,6 +56,6 @@ fi
 # Initialize the helper
 setup_vendor "$DEVICE" "$VENDOR" "$SIX_ROOT" false "$CLEAN_VENDOR"
 
-extract "$MY_DIR"/lineage-proprietary-files.txt "$SRC"
+extract "$MY_DIR"/device-proprietary-files.txt "$SRC"
 
 "$MY_DIR"/setup-makefiles.sh

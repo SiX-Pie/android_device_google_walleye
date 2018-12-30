@@ -54,7 +54,7 @@ setup_vendor "$DEVICE" "$VENDOR" "$SIX_ROOT"
 write_walleye_headers
 
 # The standard blobs
-write_makefiles "$MY_DIR"/lineage-proprietary-files.txt
+write_makefiles "$MY_DIR"/device-proprietary-files.txt
 
 # Done
 write_footers
